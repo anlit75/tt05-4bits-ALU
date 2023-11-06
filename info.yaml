@@ -28,9 +28,9 @@ documentation:
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
       The 4-bits ALU (Arithmetic Logic Unit) implemented in this project performs 
-      16 different operations on two 4-bit input values, A and B. 
+      16 different operations on two 4-bit input values (A and B) and an optional carry input (c_in). 
 
-      These operations include **addition, subtraction, multiplication, division, 
+      The available operations include **zero, addition, subtraction, multiplication, division, 
       bitwise operations, logical shifts, 2's complement, equality comparison, 
       and greater-than comparison**.
 
@@ -38,13 +38,13 @@ documentation:
   how_to_test:  |
       To test the 4-bits ALU, follow these steps:
 
-      1. Connect the inputs A[3:0] and B[3:0] to your desired 4-bit values.
+      1. Connect the inputs A[3:0], B[3:0] and c_in to your desired 4-bit values.
 
       2. Set the opcode[3:0] to select the operation you want to perform.
 
       3. Ensure that the "ena" signal is high to enable the design.
 
-      4. Provide a clock signal (clk) with a frequency of 10 MHz (clock_hz: 10000000).
+      4. Provide a clock signal (clk) with a frequency of 10 MHz (clock_hz: 1M).
       
       5. Make sure that the reset signal (rst_n) is low for normal operation.
 
@@ -73,16 +73,16 @@ documentation:
     - Bidirectional bit 7 None
     - Bidirectional bit 6 None
     - Bidirectional bit 5 None
-    - Bidirectional bit 4 None
+    - c_in(carry in)
     - opcode[3]
     - opcode[2]
     - opcode[1]
     - opcode[0]
 
 # The following fields are optional
-  tag:          "alu, calculator"      # comma separated list of tags: test, encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
-  external_hw:  ""      # Describe any external hardware needed
-  discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
-  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
-  clock_hz:     10000000       # Clock frequency in Hz (if required)
-  picture:      ""      # relative path to a picture in your repository (must be 512kb or less)
+  tag:          "alu, calculator"
+  external_hw:  ""           # Describe any external hardware needed
+  discord:      ""           # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""           # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1000000      # Clock frequency in Hz (if required)
+  picture:      "alu_schematic.png"      # relative path to a picture in your repository (must be 512kb or less)
